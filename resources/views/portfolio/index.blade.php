@@ -7,14 +7,6 @@
     <div class="row">
         <div class="col-md-12">
 
-            @if (session()->has('success_added'))
-            
-                <div class="alert alert-success">
-                    {{session()->get('success_added')}}
-                </div>
-
-            @endif
-
             <h3>Portfolios List</h3>
         <div class="pull-right"><a class="btn btn-link" href="{{url('portfolios/create')}}"><u>New Portfolio</u></a></div>
             <table class="table">
