@@ -32,6 +32,8 @@ class PortfolioController extends Controller
         $portfolio->description = $request->input('description');
         $portfolio->save();
 
+        session()->flash('success_added','Portfolio Added Successfully');
+
         return redirect ('portfolios');
     }
 
