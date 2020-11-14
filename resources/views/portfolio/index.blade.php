@@ -33,7 +33,7 @@
 
                     @foreach ($portfolios as $item)
                     <tr>
-                        <td>{{$item->title}}</td>
+                    <td>{{$item->title}} <br> <i style="color: rgb(160, 160, 160)">{{$item->user->name}}</i></td>
                         <td>{{$item->description}}</td>
                         <td>{{$item->created_at}}</td>
                         <td>
