@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Portfolio;
+use App\Http\Requests\portfolioRequest;
+
 
 class PortfolioController extends Controller
 {
@@ -23,7 +25,7 @@ class PortfolioController extends Controller
         return view('portfolio/create');
     }
 
-    public function store(Request $request){
+    public function store(PortfolioRequest $request){
         $portfolio = new Portfolio();
 
         $portfolio->title = $request->input('title');
@@ -45,7 +47,7 @@ class PortfolioController extends Controller
 
 
 
-    public function update(Request $request ,$id){
+    public function update(PortfolioRequest $request ,$id){
 
      $portfolio = Portfolio::find($id);
 
