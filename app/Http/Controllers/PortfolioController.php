@@ -34,8 +34,33 @@ class PortfolioController extends Controller
     }
 
 
-    public function edit(){}
-    public function update(){}
+    public function edit($id){
+
+     $portfolio = Portfolio::find($id);
+
+     return view('portfolio.edit',['portfolio'=>$portfolio]);
+
+    }
+
+
+
+
+    public function update(Request $request ,$id){
+
+     $portfolio = Portfolio::find($id);
+
+     $portfolio->title = $request->input('title');
+     $portfolio->description = $request->input('description');
+
+     $portfolio->save();
+
+     return redirect('portfolios');
+    }
+
+
+
+
+
     public function destroy(){}
 
 }

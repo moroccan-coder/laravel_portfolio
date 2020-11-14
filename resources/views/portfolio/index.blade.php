@@ -29,7 +29,7 @@
                         <td>{{$item->created_at}}</td>
                         <td>
                         <a href="" class="btn btn-success">Show</a>
-                        <a href="" class="btn btn-primary">Edit</a>
+                        <a href="{{url('portfolios/'.$item->id.'/edit')}}" class="btn btn-primary">Edit</a>
                         <a href="" class="btn btn-danger">Delete</a>
                     </td>
                     </tr>
