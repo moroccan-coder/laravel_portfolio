@@ -29,6 +29,8 @@ class PortfolioController extends Controller
         $portfolio->title = $request->input('title');
         $portfolio->description = $request->input('description');
         $portfolio->save();
+
+        return redirect ('portfolios');
     }
 
 
