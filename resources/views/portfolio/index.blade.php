@@ -28,9 +28,18 @@
                         <td>{{$item->description}}</td>
                         <td>{{$item->created_at}}</td>
                         <td>
-                        <a href="" class="btn btn-success">Show</a>
-                        <a href="{{url('portfolios/'.$item->id.'/edit')}}" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-danger">Delete</a>
+                       
+                        <form action="{{url('portfolios/'.$item->id)}}" method="POST">
+                            {{ csrf_field() }}
+                            {{method_field('DELETE')}}
+
+                            <a href="" class="btn btn-success">Show</a>
+                            <a href="{{url('portfolios/'.$item->id.'/edit')}}" class="btn btn-primary">Edit</a>
+
+                            <Button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+
+                        
                     </td>
                     </tr>
                     @endforeach

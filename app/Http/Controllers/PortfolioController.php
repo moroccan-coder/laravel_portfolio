@@ -61,6 +61,12 @@ class PortfolioController extends Controller
 
 
 
-    public function destroy(){}
+    public function destroy($id){
+     
+        Portfolio::find($id)->delete();
+
+        return redirect('portfolios');
+
+    }
 
 }
