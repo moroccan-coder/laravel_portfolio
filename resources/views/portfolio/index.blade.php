@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
     
@@ -8,12 +8,12 @@
         <div class="col-md-12">
 
             <h3>Portfolios List</h3>
-        <div class="pull-right"><a class="btn btn-link" href="{{url('portfolios/create')}}"><u>New Portfolio</u></a></div>
+        <div class="offset-10"><a class="btn btn-link" href="{{url('portfolios/create')}}"><u>New Portfolio</u></a></div>
             <table class="table">
                 <head>
                     <tr>
                         <th>Title</th>
-                        <th class="col-md-6">Description</th>
+                        <th >Description</th>
                         <th>Date</th>
                         <th>Actions</th>
                     </tr>
