@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Portfolio;
 use App\Http\Requests\portfolioRequest;
 use Auth;
+use Illuminate\Http\UploadedFile;
 
 class PortfolioController extends Controller
 {
@@ -39,6 +40,17 @@ class PortfolioController extends Controller
         $portfolio->title = $request->input('title');
         $portfolio->description = $request->input('description');
         $portfolio->user_id = Auth::user()->id;
+
+
+       //store upload image
+       if($request->hasFile('foto'))
+       {
+           //store image inside images folder into storage\app  + passe the path of saved image into pic inside our database table
+           $portfolio->pic = $request->foto->store('image');
+
+          
+       }
+
 
         $portfolio->save();
 

@@ -8,7 +8,7 @@
         <div class="col-md-12">
 
         
-        <form action="{{url('/portfolios')}}" method="POST">
+        <form action="{{url('/portfolios')}}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
 
              <div class="form-groupe @if($errors->get('title')) has-error @endif">
@@ -42,6 +42,12 @@
         
            </div>
              <br>
+              <div class="form-group">
+                  <label for="">Image</label>
+                   <input class="form-control" type="file" name="foto">
+              </div>
+             <br>
+
            <div class="form-groupe">
         
            <input type="submit" value="Save" class="form-control btn btn-primary">
