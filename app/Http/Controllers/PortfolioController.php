@@ -64,6 +64,9 @@ class PortfolioController extends Controller
 
      $portfolio = Portfolio::find($id);
 
+
+     $this->authorize('update',$portfolio);
+
      return view('portfolio.edit',['portfolio'=>$portfolio]);
 
     }
