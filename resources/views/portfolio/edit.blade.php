@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-12">
 
-        <form action="{{url('/portfolios/'.$portfolio->id)}}" method="POST">
+        <form action="{{url('/portfolios/'.$portfolio->id)}}" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="_method" value="PUT">
             {{ csrf_field() }}
 
@@ -22,6 +22,11 @@
                 <textarea name="description" class="form-control" cols="30" rows="5">{{$portfolio->description}}</textarea>
         
            </div>
+           <br>
+           <div class="form-group">
+            <label for="">Image</label>
+             <input class="form-control" type="file" name="foto">
+        </div>
              <br>
            <div class="form-groupe">
         

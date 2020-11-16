@@ -9,48 +9,46 @@
 
             <h3>Portfolios List</h3>
         <div class="offset-10"><a class="btn btn-link" href="{{url('portfolios/create')}}"><u>New Portfolio</u></a></div>
-            <table class="table">
-                <head>
-                    <tr>
-                        <th>Title</th>
-                        <th >Description</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
+          <br>
+          
 
+
+        <div class="row">
             
-                </head>
-
-                <body>
-
-                    @foreach ($portfolios as $item)
-                    <tr>
-                    <td>{{$item->title}} <br> <i style="color: rgb(160, 160, 160)">{{$item->user->name}}</i></td>
-                        <td>{{$item->description}}</td>
-                        <td>{{$item->created_at}}</td>
-                        <td>
-                       
+            @foreach ($portfolios as $item)
+                
+            
+            <div class="col-sm-6 col-md-4">
+    
+                <div class="thumbnail">
+                <img width="200" height="260" src="{{asset('storage/'.$item->pic)}}" alt="">
+                    <div class="caption">
+                    <h3>{{$item->title}}</h3>
+                        <p>...</p>
+                        <p>
+                            
                         <form action="{{url('portfolios/'.$item->id)}}" method="POST">
                             {{ csrf_field() }}
                             {{method_field('DELETE')}}
 
-                            <a href="" class="btn btn-success">Show</a>
-                            <a href="{{url('portfolios/'.$item->id.'/edit')}}" class="btn btn-primary">Edit</a>
+                            <a href="#" class="btn btn-success" role="button">Show</a>
+                        <a href="{{url('portfolios/'.$item->id.'/edit')}}" class="btn btn-primary" role="button">Update</a>
+                        
 
                             <Button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
+                            </form>
+                        </p>
+                    </div>
+                </div>
+           
+            </div>
+        @endforeach
+    
 
-                        
-                    </td>
-                    </tr>
-                    @endforeach
-                
-                </body>
 
-
-            </table>
         </div>
     </div>
 </div>  
+</div>
 
 @endsection

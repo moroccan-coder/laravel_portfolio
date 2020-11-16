@@ -46,7 +46,7 @@ class PortfolioController extends Controller
        if($request->hasFile('foto'))
        {
            //store image inside images folder into storage\app  + passe the path of saved image into pic inside our database table
-           $portfolio->pic = $request->foto->store('image');
+           $portfolio->pic = $request->foto->store('images');
 
           
        }
@@ -77,6 +77,15 @@ class PortfolioController extends Controller
 
      $portfolio->title = $request->input('title');
      $portfolio->description = $request->input('description');
+
+      //store upload image
+      if($request->hasFile('foto'))
+      {
+          //store image inside images folder into storage\app  + passe the path of saved image into pic inside our database table
+          $portfolio->pic = $request->foto->store('images');
+
+         
+      }
 
      $portfolio->save();
 

@@ -25,12 +25,17 @@ Route::get('/', function () {
 });
 
 
+// this route resume all 6 route bellow (index,create,store,update,destroy,show)
+//Route::resource('portfolios','PortfolioController');
+
+
 Route::get('portfolios'          ,'PortfolioController@index');
 Route::get('portfolios/create'   ,'PortfolioController@create');
 Route::post('portfolios'          ,'PortfolioController@store');
 Route::get('portfolios/{id}/edit','PortfolioController@edit');
 Route::put('portfolios/{id}'     ,'PortfolioController@update');
 Route::delete('portfolios/{id}'     ,'PortfolioController@destroy');
+
 
 
 
